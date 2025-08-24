@@ -48,7 +48,7 @@ const Home = () => {
         </section>
 
         {/* Section Catégories */}
-        <section className="mb-12">
+        <section className="mb-12 bg-yellow-50">
             <h2 className="text-3xl font-bold mb-6 text-center">Catégories populaires</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category, index) => (
@@ -81,7 +81,7 @@ const Home = () => {
         </section>
 
         {/* Section Avantages */}
-        <section className="bg-gray-100 rounded-xl p-8 mb-12">
+        <section className="bg-gray-300 rounded-xl p-8 mb-12">
             <h2 className="text-3xl font-bold mb-8 text-center">Pourquoi nous choisir ?</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">

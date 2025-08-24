@@ -15,7 +15,7 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <div className="App min-h-screen bg-gray-100 flex flex-col">
+        <div className="App min-h-screen bg-gray-200 flex flex-col">
           <Header />
           <main className="flex-grow">
             <Routes>
