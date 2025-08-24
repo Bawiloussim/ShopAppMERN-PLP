@@ -6,7 +6,8 @@ const api = axios.create({
     baseURL: API_URL,
 });
 
-// Intercepteur pour ajouter le token aux requêtes
+
+// Ensuite, configurez les intercepteurs
 api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('token');
@@ -20,7 +21,6 @@ api.interceptors.request.use(
     }
 );
 
-// Intercepteur pour gérer les erreurs
 api.interceptors.response.use(
     (response) => response,
     (error) => {
@@ -33,3 +33,4 @@ api.interceptors.response.use(
 );
 
 export default api;
+

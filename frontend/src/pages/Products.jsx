@@ -94,7 +94,7 @@ const Products = () => {
                 >
                 <option value="all">Toutes les catégories</option>
                 <option value="electronics">Électronique</option>
-                <option value="clothing">Vêtements</option>
+                <option value="clothing">Habillement</option>
                 <option value="home">Maison</option>
                 {/* Vérifiez la valeur exacte utilisée dans votre base de données */}
                 <option value="sport">Sport</option>

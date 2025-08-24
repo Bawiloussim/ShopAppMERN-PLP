@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
@@ -26,4 +27,20 @@ app.use(require('./middleware/error'));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// À la fin de server.js, remplacez le code existant par :
+if (process.env.NODE_ENV !== 'test') {
+    mongoose.connect(process.env.MONGO_URI)
+        .then(() => {
+        console.log('MongoDB Connected: ' + process.env.MONGO_URI);
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+        })
+        .catch(err => {
+        console.log(err);
+        });
+    }
+
+module.exports = app;
