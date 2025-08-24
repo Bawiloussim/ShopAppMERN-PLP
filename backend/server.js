@@ -4,10 +4,10 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
-// Charger les variables d'environnement
+// Variable environnement chargée
 dotenv.config();
 
-// Connexion à la base de données
+// connection of the database
 connectDB();
 
 const app = express();
@@ -22,7 +22,7 @@ app.use('/api/products', require('./routes/products'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 
-// Middleware de gestion d'erreurs
+// Middleware of error handling
 app.use(require('./middleware/error'));
 
 const PORT = process.env.PORT || 5000;
