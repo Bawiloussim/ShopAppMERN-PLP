@@ -36,7 +36,7 @@ const Home = () => {
     return (
         <div className="container mx-auto px-4 py-8">
         {/* Bannière Hero */}
-        <section className="bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl text-white p-8 mb-12 relative overflow-hidden">
+        <section className="mt-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl text-white p-8 mb-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-black opacity-10"></div>
             <div className="relative z-10 max-w-2xl">
             <h2 className="text-4xl font-bold mb-4">Bienvenue sur ShopAppBG</h2>
