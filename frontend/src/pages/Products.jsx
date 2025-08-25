@@ -34,12 +34,12 @@ const Products = () => {
         
         // Filtre par catégorie - vérifiez la valeur exacte de la catégorie
         if (filters.category !== 'all') {
-        result = result.filter(product => product.category === filters.category);
+            result = result.filter(product => product.category === filters.category);
         }
         
         // Filtre par prix
         if (filters.priceRange !== 'all') {
-        const [min, max] = filters.priceRange.split('-').map(Number);
+            const [min, max] = filters.priceRange.split('-').map(Number);
         if (max) {
             result = result.filter(product => product.price >= min && product.price <= max);
         } else {
