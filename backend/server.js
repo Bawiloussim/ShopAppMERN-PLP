@@ -14,12 +14,10 @@ const app = express();
 
 // Middleware
 app.use(cors(
-        {
-    origin: [
-        'https://shop-app-mern-plp.vercel.app',
-        'http://localhost:5173'
-    ],
-    credentials: true
+    {
+        origin: "https://shop-app-mern-plp-git-main-bawiloussims-projects.vercel.app",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
 }));
 app.use(express.json());
 
