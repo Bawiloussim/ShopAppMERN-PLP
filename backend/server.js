@@ -13,7 +13,14 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors(
+        {
+    origin: [
+        'https://shop-app-mern-plp.vercel.app',
+        'http://localhost:5173'
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes
@@ -26,19 +33,6 @@ app.use('/api/orders', require('./routes/orders'));
 app.use(require('./middleware/error'));
 
 const PORT = process.env.PORT || 5000;
-
-
-// Configuration CORS
-const corsOptions = {
-    origin: [
-        'https://shop-app-mern-plp.vercel.app'
-    ],
-    credentials: true,
-    optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
-// ... autres routes
 
 
 // À la fin de server.js, remplacez le code existant par :

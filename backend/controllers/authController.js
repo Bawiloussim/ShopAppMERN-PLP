@@ -31,13 +31,13 @@ exports.register = async (req, res) => {
         const userExists = await User.findOne({ email });
 
         if (userExists) {
-        return res.status(400).json({ message: 'User already exists' });
+            return res.status(400).json({ message: 'User already exists' });
         }
 
         const user = await User.create({
-        name,
-        email,
-        password,
+            name,
+            email,
+            password,
         });
 
         if (user) {
@@ -63,12 +63,12 @@ exports.login = async (req, res) => {
         const user = await User.findOne({ email });
 
         if (user && (await user.matchPassword(password))) {
-        res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            token: generateToken(user._id),
-        });
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                token: generateToken(user._id),
+            });
         } else {
         res.status(401).json({ message: 'Invalid email or password' });
         }
@@ -89,7 +89,7 @@ exports.getProfile = async (req, res) => {
             email: user.email,
         });
         } else {
-        res.status(404).json({ message: 'User not found' });
+            res.status(404).json({ message: 'User not found' });
         }
     } catch (error) {
         res.status(500).json({ message: error.message });
