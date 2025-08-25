@@ -27,7 +27,19 @@ app.use(require('./middleware/error'));
 
 const PORT = process.env.PORT || 5000;
 
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Configuration CORS
+const corsOptions = {
+    origin: [
+        'https://shop-app-mern-plp.vercel.app'
+    ],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+// ... autres routes
+
 
 // À la fin de server.js, remplacez le code existant par :
 if (process.env.NODE_ENV !== 'test') {
