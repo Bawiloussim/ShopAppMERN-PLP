@@ -38,11 +38,6 @@ const Header = () => {
                 
                 <nav className="hidden md:block">
                     <ul className="flex space-x-8 items-center">
-                        <li>
-                            <Link to="/" className="text-white hover:text-blue-200 text-lg font-semibold transition duration-200">
-                                Accueil
-                            </Link>
-                        </li>
                         <li 
                             className="relative"
                             ref={categoriesRef}
