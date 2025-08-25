@@ -12,12 +12,23 @@ connectDB();
 
 const app = express();
 
+
+const allowedOrigins = [
+  "http://localhost:5173",  // pour le dev local
+  "https://shop-app-mern-plp-git-main-bawiloussims-projects.vercel.app" // ton frontend déployé
+];
+
 // Middleware
-app.use(cors(
-    {
-        origin: "https://shop-app-mern-plp-git-main-bawiloussims-projects.vercel.app",
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true
+    app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        } else {
+        callback(new Error("Not allowed by CORS"));
+        }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
 app.use(express.json());
 
